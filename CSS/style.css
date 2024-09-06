@@ -1,0 +1,216 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+/* Default Light Theme */
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+/* Dark Theme Styles */
+
+body.light-theme .navbar{
+    background-color: rgba(248, 242, 242, 0.9); /* Light theme navbar */
+    color: black;
+}
+body.light-theme .hamburger {
+    color: black;
+}
+.about-section,
+.services-section {
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Dark Theme */
+body.dark-theme .hero-section {
+    background: url('../images/hero-light.jpg') no-repeat center center/cover; /* Dark theme image */
+    color: white;
+}
+
+body.dark-theme .about-section,
+body.dark-theme .services-section {
+    background-color: white;
+    color: black;
+}
+
+
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: inherit;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+/* Navbar Fixed at the Top */
+.navbar {
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Positions it at the top of the viewport */
+    left: 0;
+    width: 100%; /* Ensures the navbar spans the full width */
+    background-color: rgba(0, 0, 0, 0.8); /* Adds a semi-transparent background for visibility */
+    color: white; /* Text color for the navbar */
+    padding: 1.2rem 2rem; /* Adds padding for aesthetics */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Adjust the page content to avoid overlap with the fixed navbar */
+body {
+    padding-top: 70px; /* Adjust this value based on your navbar height */
+}
+
+/* Responsive Menu for Small Screens */
+.hamburger {
+    display: none; /* Initially hidden */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Menu for Small Screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; /* Hidden initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust this value based on navbar height */
+        right: 0;
+        width: 25%;
+        padding: 1rem 0;
+    }
+
+    .nav-links.show {
+        display: flex; /* Shows links when 'show' class is present */
+    }
+}
+
+
+
+/* Hero Section */
+/* Hero Section with Full-Width and Full-Height Background Image */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    background: url('../images/hero-dark.jpg') no-repeat center center/cover;
+    background-attachment: fixed;  /* Path to your image */
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent button to stand out */
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
+/* About Section with Full-Width and Full-Height */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    /* background: black; Light background color, change this to an image if needed */
+    /* color: White; Text color */
+    padding: 0 2rem;
+    text-align: center;
+}
+
+/* Services Section */
+.services-section {
+    padding: 2rem;
+    /* background: black;
+    color: white; */
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.service-card {
+    /* background: white;
+    color: black; */
+    padding: 1rem;
+    flex: 1;
+    min-width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Adds a semi-transparent background for visibility */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .services-container {
+        flex-direction: column;
+    }
+}
