@@ -13,65 +13,6 @@ body {
     transition: background-color 0.3s, color 0.3s; 
 }
 
-/* Dark Theme Styles */
-
-body.light-theme .navbar {
-    background-color: rgba(248, 242, 242, 0.9); 
-    color: black;
-}
-body.light-theme .nav-links a{
-    color: black;
-}
-body.light-theme .hamburger {
-    color: black;
-}
-body.light-theme .hero-content {
-    color: black;
-}
-body.light-theme .section-title {
-    color: black;
-}
-.about-section, .services-section {
-    background-color: black;
-    color: white;
-    transition: background-color 0.3s, color 0.3s; 
-}
-
-/* Dark Theme */
-body.dark-theme .hero-section {
-    background: url('../images/hero-light.jpg') no-repeat center center/cover; 
-    color: white;
-}
-body.dark-theme .about-section,
-body.dark-theme .services-section {
-    background-color: white;
-    color: black;
-}
-
-
-
-
-/* Dark Theme Styles - Now Light */
-.dark-theme .contact-section {
-    background-color: #ffffff; 
-    color: #000000; 
-}
-.dark-theme .contact-form input,
-.dark-theme .contact-form textarea {
-    background-color: #f2f2f2; 
-    color: #000000; 
-    border: 1px solid #cccccc; 
-}
-.dark-theme .contact-form .cta-button {
-    background-color: #dddddd; 
-}
-.dark-theme .contact-form .cta-button:hover {
-    background-color: #bbbbbb; 
-}
-.dark-theme .success-message {
-    background-color: #e0f7df; 
-    border: 1px solid #a5d6a7; 
-}
 
 /* *******************************Navbar Design************************************** */
 .navbar {
@@ -465,6 +406,68 @@ footer {
     opacity: 0.7
 }
 
+
+
+
+/* **********************************************Dark Theme Styles********************************************* */
+
+body.light-theme .navbar {
+    background-color: rgba(248, 242, 242, 0.9); 
+    color: black;
+}
+body.light-theme .nav-links a{
+    color: black;
+}
+body.light-theme .hamburger {
+    color: black;
+}
+body.light-theme .hero-content {
+    color: black;
+}
+body.light-theme .section-title {
+    color: black;
+}
+.about-section, .services-section {
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+
+
+
+
+
+/* **************************************Dark Theme ******************************************* */
+.dark-theme .contact-section {
+    background-color: #ffffff; 
+    color: #000000; 
+}
+.dark-theme .contact-form input,
+.dark-theme .contact-form textarea {
+    background-color: #f2f2f2; 
+    color: #000000; 
+    border: 1px solid #cccccc; 
+}
+.dark-theme .contact-form .cta-button {
+    background-color: #dddddd; 
+}
+.dark-theme .contact-form .cta-button:hover {
+    background-color: #bbbbbb; 
+}
+.dark-theme .success-message {
+    background-color: #e0f7df; 
+    border: 1px solid #a5d6a7; 
+}
+body.dark-theme .hero-section {
+    background: url('../images/hero-light.jpg') no-repeat center center/cover; 
+    color: white;
+}
+body.dark-theme .about-section,
+body.dark-theme .services-section {
+    background-color: white;
+    color: black;
+}
 
 
 
