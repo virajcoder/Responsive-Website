@@ -41,12 +41,47 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.body.classList.toggle('dark-theme'); // Toggle dark theme
                 document.body.classList.toggle('light-theme'); // Toggle light theme
 
-                // Change button icon and hero section image based on current theme
+                // Change button icon based on current theme
                 if (document.body.classList.contains('dark-theme')) {
                     themeToggle.textContent = '☀️'; // Sun icon for light mode
                 } else {
                     themeToggle.textContent = '🌙'; // Moon icon for dark mode
                 }
+                
+                // Optionally, update hero section image based on the current theme
+                const heroImage = document.querySelector('.hero-section img');
+                if (heroImage) {
+                    heroImage.src = document.body.classList.contains('dark-theme')
+                        ? 'path/to/dark-theme-hero-image.jpg'
+                        : 'path/to/light-theme-hero-image.jpg';
+                }
+            });
+        }
+
+        // JavaScript for handling form submission and success message
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        if (form) {
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Display success message
+                if (successMessage) {
+                    successMessage.style.display = 'block';
+                }
+
+                // Optionally, reset the form fields after submission
+                form.reset();
+                
+                // Scroll to the top of the page to show the success message
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                setTimeout(function () {
+                    successMessage.style.display = 'none';
+                }, 2000); // 2000 milliseconds = 2 seconds
             });
         }
     }

@@ -6,34 +6,42 @@
 }
 
 /* Body Style */
-/* Default Light Theme */
 body {
     background-color: white;
     color: black;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    padding-top: 70px; 
+    transition: background-color 0.3s, color 0.3s; 
 }
+
 /* Dark Theme Styles */
 
-body.light-theme .navbar{
-    background-color: rgba(248, 242, 242, 0.9); /* Light theme navbar */
+body.light-theme .navbar {
+    background-color: rgba(248, 242, 242, 0.9); 
+    color: black;
+}
+body.light-theme .nav-links a{
     color: black;
 }
 body.light-theme .hamburger {
     color: black;
 }
-.about-section,
-.services-section {
+body.light-theme .hero-content {
+    color: black;
+}
+body.light-theme .section-title {
+    color: black;
+}
+.about-section, .services-section {
     background-color: black;
     color: white;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 /* Dark Theme */
 body.dark-theme .hero-section {
-    background: url('../images/hero-light.jpg') no-repeat center center/cover; /* Dark theme image */
+    background: url('../images/hero-light.jpg') no-repeat center center/cover; 
     color: white;
 }
-
 body.dark-theme .about-section,
 body.dark-theme .services-section {
     background-color: white;
@@ -42,30 +50,43 @@ body.dark-theme .services-section {
 
 
 
-/* Theme Toggle Button Styles */
-.theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: inherit;
-    cursor: pointer;
-    margin-left: 1rem;
+
+/* Dark Theme Styles - Now Light */
+.dark-theme .contact-section {
+    background-color: #ffffff; 
+    color: #000000; 
+}
+.dark-theme .contact-form input,
+.dark-theme .contact-form textarea {
+    background-color: #f2f2f2; 
+    color: #000000; 
+    border: 1px solid #cccccc; 
+}
+.dark-theme .contact-form .cta-button {
+    background-color: #dddddd; 
+}
+.dark-theme .contact-form .cta-button:hover {
+    background-color: #bbbbbb; 
+}
+.dark-theme .success-message {
+    background-color: #e0f7df; 
+    border: 1px solid #a5d6a7; 
 }
 
-/* Navbar Fixed at the Top */
+/* *******************************Navbar Design************************************** */
 .navbar {
-    position: fixed; /* Fixes the navbar at the top */
-    top: 0; /* Positions it at the top of the viewport */
+    position: fixed; 
+    top: 0; 
     left: 0;
-    width: 100%; /* Ensures the navbar spans the full width */
-    background-color: rgba(0, 0, 0, 0.8); /* Adds a semi-transparent background for visibility */
-    color: white; /* Text color for the navbar */
-    padding: 1.2rem 2rem; /* Adds padding for aesthetics */
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+    padding: 1.2rem 2rem; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000; /* Ensures the navbar stays on top of other content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 .nav-links {
     list-style: none;
@@ -78,63 +99,149 @@ body.dark-theme .services-section {
     text-decoration: none;
 }
 
-/* Adjust the page content to avoid overlap with the fixed navbar */
-body {
-    padding-top: 70px; /* Adjust this value based on your navbar height */
+/* ***********************************Logo image style*********************************** */
+.logo-image {
+    width: 45px; 
+    height: auto; 
+    transition: transform 0.3s; 
 }
 
-/* Responsive Menu for Small Screens */
+.logo img:hover {
+    transform: scale(1.05); 
+}
+
+
+/* ********************************* Responsive Menu navbar for Small Screens ************************ */
 .hamburger {
-    display: none; /* Initially hidden */
+    display: none; 
     font-size: 1.5rem;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
 }
-
-/* Responsive Menu for Small Screens */
+/* ********************************* Responsive Menu navbar ******************************** */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
     }
-
     .nav-links {
-        display: none; /* Hidden initially */
+        display: none; 
         flex-direction: column;
         position: absolute;
-        top: 60px; /* Adjust this value based on navbar height */
+        top: 70px; 
         right: 0;
         width: 25%;
         padding: 1rem 0;
     }
-
     .nav-links.show {
-        display: flex; /* Shows links when 'show' class is present */
+        display: flex; 
+    }
+    .services-container {
+        flex-direction: column;
+    }
+}
+
+
+/* ****************************** Theme Toggle Button ******************************************* */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: inherit;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: color 0.3s;
+}
+
+/* ********************************** Media Queries toggle button **********************************  */
+
+/* For tablets and below */
+@media (max-width: 1024px) { 
+    .theme-toggle {
+        font-size: 1.3rem; 
+        margin-left: 0.5rem; 
+    }
+}
+/* For mobile devices */
+@media (max-width: 768px) { 
+    .theme-toggle {
+        font-size: 1.2rem;
+        position: relative; 
     }
 }
 
 
 
-/* Hero Section */
-/* Hero Section with Full-Width and Full-Height Background Image */
+
+
+
+
+/* ###################################### Home Section ###################################### */
 .hero-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full viewport width */
+    align-items: flex-start;
+    height: 100vh; 
+    width: 100%;
     background: url('../images/hero-dark.jpg') no-repeat center center/cover;
-    background-attachment: fixed;  /* Path to your image */
+    background-attachment: fixed; 
     color: white;
     text-align: center;
     padding: 0 2rem;
 }
+.hero-content {
+    text-align: center;
+    max-width: 800px; 
+    margin: 0 auto;
+    margin-bottom: 10%;
+    color: white;
+}
+.hero-content h1 {
+    font-size: 3rem; 
+    font-weight: bold;
+    margin-bottom: 1rem; 
+    
+}
+.hero-content p {
+    font-size: 1.5rem; 
+    margin-bottom: 2rem; 
+   
+}
+.cta-button {
+    font-size: 1.25rem; 
+    padding: 0.75rem 2rem;
+    background-color: rgba(8, 179, 53, 0.8); 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #020a14; 
+}
 
+
+/* ******************************** Responsive for Home section ********************************* */
+@media (max-width: 768px) {
+    .hero-content {
+        margin-bottom: 30%;
+    } 
+    .hero-content h1 {
+        font-size: 2.5rem; 
+    }
+    .hero-content p {
+        font-size: 1.25rem; 
+    }
+    .cta-button {
+        font-size: 1rem; 
+        padding: 0.5rem 1.5rem; 
+    }
+}
 .cta-button {
     padding: 1rem 2rem;
-    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent button to stand out */
     color: white;
     border: none;
     cursor: pointer;
@@ -142,75 +249,222 @@ body {
 }
 
 
-/* About Section with Full-Width and Full-Height */
+
+
+/* ****************************************** About Section ****************************************** */
 .about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    width: 100%; 
+    
+    padding: 2rem;
+    text-align: center;
+}
+.about-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 2rem; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+.about-text {
+    flex: 2; 
+}
+.about-photo {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+}
+.about-photo img {
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* ****************************************** Responsive About************************************ */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+}
+
+
+
+
+
+/* ****************************************** Services Section ****************************************** */
+section {
+    width: 100%;
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full viewport width */
-    /* background: black; Light background color, change this to an image if needed */
-    /* color: White; Text color */
-    padding: 0 2rem;
-    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
 }
-
-/* Services Section */
 .services-section {
     padding: 2rem;
-    /* background: black;
-    color: white; */
+    position: relative;
 }
-
 .services-container {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
 }
-
 .service-card {
-    /* background: white;
-    color: black; */
     padding: 1rem;
     flex: 1;
     min-width: 250px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+.section-title {
+    text-align: center; 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    margin-bottom: 1.5rem; 
+    color: #f3ecec; 
+    padding-top: 1rem; 
+}
 
-/* Footer Styles */
+/* ****************************************** Responsive Service************************************ */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem; 
+    }
+}
+
+
+
+
+/* ****************************************** Contact US ****************************************** */
+.contact-section {
+    width: 100%;
+    padding: 2rem;
+    background-color: #000000; 
+    color: #ffffff; 
+    text-align: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.form-group {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+.contact-form input , .contact-form textarea {
+    width: 200%;
+    padding: 0.75rem;
+    border: 1px solid #444444; 
+    border-radius: 4px;
+    background-color: #333333; 
+    color: #ffffff; 
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    margin-right: 18%;
+    gap: 1rem;
+}
+
+.contact-form .cta-button {
+    width: auto;
+    padding: 0.75rem 1.5rem;
+    background-color: #0eb34a; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+.contact-form .cta-button:hover {
+    background-color: #071053; 
+}
+.success-message {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #006400; 
+    color: #ffffff; 
+    border: 1px solid #155724;
+}
+
+
+
+/* ************************** Responsive Contect ************************* */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .contact-section {
+        padding: 1.5rem; 
+    }
+    .contact-form {
+        padding: 0 1rem; 
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 1rem; 
+    }
+    .contact-form {
+        padding: 0; 
+    }
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.5rem; 
+    }
+    .contact-form .cta-button {
+        padding: 0.5rem 1rem; 
+    }
+}
+
+
+
+
+/* ****************************************** Footer Styles ****************************************** */
 footer {
-    background-color: rgba(0, 0, 0, 0.8); /* Adds a semi-transparent background for visibility */
+    background-color: rgba(0, 0, 0, 0.8); 
     color: white;
     text-align: center;
     padding: 1rem;
 }
-
 .footer-links {
-    list-style: none;
-    display: flex;
+    list-style: none; 
+    padding: 0;
+    display: flex; 
+    margin-top: 1rem;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
+}
+.footer-links li {
+    margin: 0 1rem; 
+}
+.footer-icon {
+    width: 24px; 
+    height: 24px;
+    display: block; 
+    transition: opacity 0.3s ease;    
+}
+.footer-icon:hover {
+    opacity: 0.7; 
+}
+.Resume{
+    color: #bbbbbb;
+}
+.Resume:hover{
+    color: #17ac39;
+    opacity: 0.7
 }
 
-.footer-links a {
-    color: white;
-    text-decoration: none;
-}
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
 
-    .hamburger {
-        display: block;
-    }
 
-    .services-container {
-        flex-direction: column;
-    }
-}
